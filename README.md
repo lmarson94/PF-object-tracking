@@ -1,4 +1,5 @@
 Launch tracking.m to test the different model.
+
 Choose the model with the parameter typeOfTracking.
 % model:
 % 0 given starting point, RGB color based point wise
