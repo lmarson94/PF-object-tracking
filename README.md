@@ -2,16 +2,25 @@ Tracking of object moving along highly non linear trajectory is a challenging ta
 This project summarizes different ways of integrating color feature and edge detections to implement a robust estimator for the tracking problem. Color cues are robust to partial occlusions and are rotational and scale invariant, but they perform poorly when the background is similar to the object to be tracked. Edge detection on the other hand is robust to this kind of problem, but it can be easily tricked by shapes similar to the reference one, like the object shadow.
 
 Two different approaches to solve the tracking problem using the Particle Filter are implemented. Both are based on color and edge feature extraction, but they differ on how the state is represented.
-1. Particle Cloud
+1. ##### Particle Cloud  
    Every particle represent one pixel and the observation is the RGB value.  
 The weight of each particle is proportional to the negative exponential of the euclidean distance between the values of the particle and the ones from the reference.
-2. Histogram
+2. ##### Histogram  
    Every particle is a square subregion of the frame. For each particle a RGB histogram and a Sobel operator histogram is built and compared to the reference histograms to evaluate its weight. 
 
-Results of the particle cloud model
+.center[
 ![animation](img/point_test.gif)
-Plot of the euclidean distance between the belief and the groundtruth normalized by the length of the diagonal
+.caption[
+**Fig. 1:** Test of the particle cloud model
+]
+]
+
+.center[
 ![error](img/point_plot.png)
+.caption[
+**Fig. 1:** Plot of the euclidean distance between the belief and the groundtruth normalized by the length of the diagonal
+]
+]
 
 Launch tracking.m to test the different models.
 Choose the model with the parameter typeOfTracking.
