@@ -10,14 +10,16 @@ Every particle is a square subregion of the frame. For each particle a RGB histo
 
 
 <p align="center">
-    <img src="img/point_test.gif"/>  
-
+    <img src="img/point_test.gif"/>
+</p>
+<p align="center">
     Test of the particle cloud model
 </p>
 
 <p align="center">
     <img src="img/point_plot.png"/>  
-
+</p>
+<p align="center">
     Plot of the euclidean distance between the belief and the groundtruth normalized by the length of the diagonal
 </p>
 
