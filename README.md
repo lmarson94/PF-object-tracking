@@ -8,7 +8,6 @@ The weight of each particle is proportional to the negative exponential of the e
 2. ##### Histogram  
    Every particle is a square subregion of the frame. For each particle a RGB histogram and a Sobel operator histogram is built and compared to the reference histograms to evaluate its weight. 
 
-
 <p align="center">
     <img src="img/point_test.gif"/>
 </p>
