@@ -3,10 +3,10 @@ This project summarizes different ways of integrating color feature and edge det
 
 Two different approaches to solve the tracking problem using the Particle Filter are implemented. Both are based on color and edge feature extraction, but they differ on how the state is represented.
 1. ##### Particle Cloud  
-Every particle represent one pixel and the observation is the RGB value.  
+   Every particle represent one pixel and the observation is the RGB value.  
 The weight of each particle is proportional to the negative exponential of the euclidean distance between the values of the particle and the ones from the reference.
 2. ##### Histogram  
-Every particle is a square subregion of the frame. For each particle a RGB histogram and a Sobel operator histogram is built and compared to the reference histograms to evaluate its weight. 
+   Every particle is a square subregion of the frame. For each particle a RGB histogram and a Sobel operator histogram is built and compared to the reference histograms to evaluate its weight. 
 
 
 <p align="center">
@@ -20,7 +20,7 @@ Every particle is a square subregion of the frame. For each particle a RGB histo
     <img src="img/point_plot.png"/>  
 </p>
 <p align="center">
-    Plot of the euclidean distance between the belief and the groundtruth normalized by the length of the diagonal
+    Plot of the euclidean distance between the belief and the groundtruth normalized by the length of the frame diagonal
 </p>
 
 Launch tracking.m to test the different models.
