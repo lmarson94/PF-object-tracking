@@ -11,15 +11,14 @@ for i=1:frameIniziale
     readFrame(v);
 end
 
-
-% model:
-% 0 given starting point, RGB color based point wise
-% 1 given starting point, RGB color based point wise and edge based histogram wise
-% 2 no initial point given, RGB color based point wise
-% 3 given starting point, RGB color based histogram wise
-% 4 given starting point, edge based histogram wise
-% 5 given starting point, HSV color based point wise and edge based histogram wise
-typeOfTracking = 3;
+% models:
+% 0 - given a starting point, RGB color based point cloud
+% 1 - given a starting point, RGB color based point cloud and edge based histogram
+% 2 - no initial point given, RGB color based point cloud 
+% 3 - given a starting point, RGB color based histogram
+% 4 - given a starting point, edge based histogram
+% 5 - given a starting point, HSV color based point cloud and edge based histogram
+typeOfTracking = 0;
 
 n = 8; % number of bins per dimension
 NEdgeP = 5; % number of particles used in models 1 and 5 for edge reinforcement
@@ -95,9 +94,7 @@ else
 end
 
 err(1) = 0;
-axis tight manual % this ensures that getframe() returns a consistent size
-filename = 'testAnimatedHist.gif';
-hh = figure;
+
 t = 2;
 %for each frame
 while hasFrame(v)
@@ -136,19 +133,7 @@ while hasFrame(v)
     plot(groundtruth(t,2), groundtruth(t,1), 'x', 'Color', 'g');
     drawnow
     
-        
-    % Capture the plot as an image 
-    fr = getframe(hh); 
-    im = frame2im(fr); 
-    [imind,cm] = rgb2ind(im,256); 
-    % Write to the GIF File 
-    if t == 2 
-      imwrite(imind,cm,filename,'gif', 'Loopcount',inf); 
-    else 
-      imwrite(imind,cm,filename,'gif','WriteMode','append'); 
-    end 
-    
-    % compute distance between truth and belief
+    %compute distance between truth and belief
     err(t) = sqrt( (groundtruth(t,2)-pos(1))^2 + (groundtruth(t,1)-pos(2))^2 );
     t = t + 1;
     
@@ -165,9 +150,6 @@ err = err ./ sqrt( width^2 + height^2);
 average_error = sum(err) / nframe;
 
 figure, plot(x, err), grid on, hold on
-title('Distance to ground truth')
-xlabel('frame') 
-ylabel('error') 
 plot(x, average_error .* ones(size(x)))
 
 
