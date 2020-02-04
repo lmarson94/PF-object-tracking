@@ -8,19 +8,25 @@ The weight of each particle is proportional to the negative exponential of the e
 2. ##### Histogram  
    Every particle is a square subregion of the frame. For each particle a RGB histogram and a Sobel operator histogram is built and compared to the reference histograms to evaluate its weight. 
 
-.center[
-![animation](img/point_test.gif)
-.caption[
-**Fig. 1:** Test of the particle cloud model
-]
-]
+<div id="container">
+    <img src="img/point_test.gif"/>
+    Test of the particle cloud model
+</div>
 
-.center[
-![error](img/point_plot.png)
-.caption[
-**Fig. 1:** Plot of the euclidean distance between the belief and the groundtruth normalized by the length of the diagonal
-]
-]
+<div id="container">
+    <img src="img/point_plot.png"/>
+    Plot of the euclidean distance between the belief and the groundtruth normalized by the length of the diagonal
+</div>
+
+#container {
+    height:100px;
+    line-height:100px;
+}
+
+#container img {
+    vertical-align:middle;
+    max-height:100%;
+}
 
 Launch tracking.m to test the different models.
 Choose the model with the parameter typeOfTracking.
