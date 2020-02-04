@@ -8,3 +8,7 @@ model:
 3 - given starting point, RGB color based histogram wise  
 4 - given starting point, edge based histogram wise  
 5 - given starting point, HSV color based point wise and edge based histogram wise  
+
+![test](img/point_test.gif)
+
+
