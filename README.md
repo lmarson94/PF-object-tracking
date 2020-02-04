@@ -11,11 +11,13 @@ The weight of each particle is proportional to the negative exponential of the e
 
 <p align="center">
     <img src="img/point_test.gif"/>  
+
     Test of the particle cloud model
 </p>
 
 <p align="center">
     <img src="img/point_plot.png"/>  
+
     Plot of the euclidean distance between the belief and the groundtruth normalized by the length of the diagonal
 </p>
 
